@@ -20,9 +20,6 @@ class ViewController: UIViewController {
             customView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             customView.heightAnchor.constraint(equalToConstant: 200)
         ])
-        customView.textClosure = {string in
-            print(string)
-        }
     }
 
 

@@ -9,7 +9,13 @@ import UIKit
 
 class FirstView: UIView, UITextFieldDelegate {
     
-    var textClosure : ((String) -> Void)?
+    var textClosureBegin : ((String) -> Void) = {string in
+        print("Start editing text \(string)")
+    }
+    var textClosureEnd : ((String) -> Void) = {string in
+        print("End editing text \(string)")
+    }
+    
     
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
@@ -21,21 +27,31 @@ class FirstView: UIView, UITextFieldDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print(label1)
-        label1?.text = "First"
         commonInit()
-        print(textField1)
-        textField1?.delegate = self
-        textField2?.delegate = self
-        textField3?.delegate = self
-        
     }
     
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        label1?.text = "First"
+        label2?.text = "Middle"
+        label3?.text = "Last"
+        
+        textField1?.delegate = self
+        textField2?.delegate = self
+        textField3?.delegate = self
+        
+        textField1.placeholder = "Enter First Name"
+        textField2.placeholder = "Enter Middle Name"
+        textField3.placeholder = "Enter Last Name"
         
     }
+    
     private func commonInit(){
         let xib = UINib(nibName: "FirstView", bundle: nil)
         let view = xib.instantiate(withOwner: self).first as! FirstView
@@ -43,8 +59,12 @@ class FirstView: UIView, UITextFieldDelegate {
         view.frame = self.bounds
         addSubview(view)
     }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textClosureBegin(textField.text ?? " ")
+        return true
+    }
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        textClosure?(textField.text ?? "")
+        textClosureEnd(textField.text ?? " ")
         return true
     }
 }

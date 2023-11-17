@@ -8,15 +8,10 @@
 import UIKit
 
 class FirstView: UIView, UITextFieldDelegate {
-    
-    var textClosureBegin : ((String) -> Void) = {string in
-        print("Start editing text \(string)")
-    }
-    var textClosureEnd : ((String) -> Void) = {string in
-        print("End editing text \(string)")
-    }
-    
-    
+    var textClosureBegin : ((String) -> Void)?
+    var textClosureEnd : ((String) -> Void)?
+
+
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
@@ -28,6 +23,7 @@ class FirstView: UIView, UITextFieldDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
+        
     }
     
     
@@ -60,11 +56,11 @@ class FirstView: UIView, UITextFieldDelegate {
         addSubview(view)
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textClosureBegin(textField.text ?? " ")
+        textClosureBegin?(textField.text ?? "error")
         return true
     }
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        textClosureEnd(textField.text ?? " ")
+        textClosureEnd?(textField.text ?? "error")
         return true
     }
 }

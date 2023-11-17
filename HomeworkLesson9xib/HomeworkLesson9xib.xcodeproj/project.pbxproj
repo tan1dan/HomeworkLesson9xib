@@ -15,6 +15,9 @@
 		F73066732B0103E200C0CC05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73066712B0103E200C0CC05 /* LaunchScreen.storyboard */; };
 		F730667B2B010D1D00C0CC05 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F730667A2B010D1D00C0CC05 /* FirstView.xib */; };
 		F730667D2B010D6300C0CC05 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F730667C2B010D6300C0CC05 /* FirstView.swift */; };
+		F730667F2B06D92E00C0CC05 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F730667E2B06D92E00C0CC05 /* SecondView.swift */; };
+		F73066812B06DD2400C0CC05 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73066802B06DD2400C0CC05 /* ThirdView.swift */; };
+		F73066832B06DD8400C0CC05 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73066822B06DD8400C0CC05 /* ThirdView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		F73066742B0103E200C0CC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F730667A2B010D1D00C0CC05 /* FirstView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstView.xib; sourceTree = "<group>"; };
 		F730667C2B010D6300C0CC05 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		F730667E2B06D92E00C0CC05 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		F73066802B06DD2400C0CC05 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
+		F73066822B06DD8400C0CC05 /* ThirdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +70,11 @@
 				F73066682B0103E000C0CC05 /* SceneDelegate.swift */,
 				F730666A2B0103E000C0CC05 /* ViewController.swift */,
 				F730667C2B010D6300C0CC05 /* FirstView.swift */,
+				F730667E2B06D92E00C0CC05 /* SecondView.swift */,
+				F73066802B06DD2400C0CC05 /* ThirdView.swift */,
 				F730666C2B0103E000C0CC05 /* Main.storyboard */,
 				F730667A2B010D1D00C0CC05 /* FirstView.xib */,
+				F73066822B06DD8400C0CC05 /* ThirdView.xib */,
 				F730666F2B0103E200C0CC05 /* Assets.xcassets */,
 				F73066712B0103E200C0CC05 /* LaunchScreen.storyboard */,
 				F73066742B0103E200C0CC05 /* Info.plist */,
@@ -134,6 +143,7 @@
 				F73066732B0103E200C0CC05 /* LaunchScreen.storyboard in Resources */,
 				F730667B2B010D1D00C0CC05 /* FirstView.xib in Resources */,
 				F73066702B0103E200C0CC05 /* Assets.xcassets in Resources */,
+				F73066832B06DD8400C0CC05 /* ThirdView.xib in Resources */,
 				F730666E2B0103E000C0CC05 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,8 +156,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F730666B2B0103E000C0CC05 /* ViewController.swift in Sources */,
+				F730667F2B06D92E00C0CC05 /* SecondView.swift in Sources */,
 				F730667D2B010D6300C0CC05 /* FirstView.swift in Sources */,
 				F73066672B0103E000C0CC05 /* AppDelegate.swift in Sources */,
+				F73066812B06DD2400C0CC05 /* ThirdView.swift in Sources */,
 				F73066692B0103E000C0CC05 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

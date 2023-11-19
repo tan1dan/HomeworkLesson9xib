@@ -15,19 +15,13 @@ class ThirdView: UIView {
     @IBOutlet weak var buttonSave: UIButton!
     @IBOutlet weak var buttonCancel: UIButton!
     @IBOutlet weak var buttonClear: UIButton!
+    
     weak var delegate: ThirdViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
         
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        buttonSave.setTitle("Save", for: .normal)
-        buttonCancel.setTitle("Cancel", for: .normal)
-        buttonClear.setTitle("Clear", for: .normal)
-        buttonSave.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -36,13 +30,18 @@ class ThirdView: UIView {
     
     private func commonInit(){
         let xib = UINib(nibName: "ThirdView", bundle: nil)
-        let view = xib.instantiate(withOwner: self).first as! ThirdView
+        let view = xib.instantiate(withOwner: self).first as! UIView
         
         view.frame = self.bounds
         addSubview(view)
+        buttonSave.setTitle("Save", for: .normal)
+        buttonCancel.setTitle("Cancel", for: .normal)
+        buttonClear.setTitle("Clear", for: .normal)
+        buttonSave.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
     @objc func buttonTapped(_ sender: UIButton){
         delegate?.buttonPres(self)
+        
     }
 }

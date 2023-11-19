@@ -31,8 +31,12 @@ class FirstView: UIView, UITextFieldDelegate {
         super.init(coder: coder)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    private func commonInit(){
+        let xib = UINib(nibName: "FirstView", bundle: nil)
+        let view = xib.instantiate(withOwner: self).first as! UIView
+        
+        view.frame = self.bounds
+        addSubview(view)
         
         label1?.text = "First"
         label2?.text = "Middle"
@@ -45,15 +49,6 @@ class FirstView: UIView, UITextFieldDelegate {
         textField1.placeholder = "Enter First Name"
         textField2.placeholder = "Enter Middle Name"
         textField3.placeholder = "Enter Last Name"
-        
-    }
-    
-    private func commonInit(){
-        let xib = UINib(nibName: "FirstView", bundle: nil)
-        let view = xib.instantiate(withOwner: self).first as! FirstView
-        
-        view.frame = self.bounds
-        addSubview(view)
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textClosureBegin?(textField.text ?? "error")

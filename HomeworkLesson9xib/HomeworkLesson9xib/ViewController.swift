@@ -40,19 +40,19 @@ class ViewController: UIViewController, ThirdViewDelegate {
             thirdView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         customView.textClosureBegin = {string in
-            print("Start editing text \(string)")
+            print("Start editing text: \(string)")
         }
         
         customView.textClosureEnd = {string in
-            print("End editing text \(string)")
+            print("End editing text: \(string)")
         }
     }
     
     func buttonPres(_ sender: ThirdView) {
         print("""
-             First: \(customView.textField1.text ?? "nil")
-             Middle: \(customView.textField2.text ?? "nil")
-             Last: \(customView.textField3.text ?? "nil")
+             First: \(customView.textField1?.text ?? "nil")
+             Middle: \(customView.textField2?.text ?? "nil")
+             Last: \(customView.textField3?.text ?? "nil")
              """)
     }
 
